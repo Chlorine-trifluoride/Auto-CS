@@ -1,15 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Numerics;
-using System.Reflection.Metadata.Ecma335;
 using System.Text;
 
 namespace AutoConsole
 {
     class Vector2
     {
-        public float X { get; set; }
-        public float Y { get; set; }
+        public float X { get; private set; }
+        public float Y { get; private set; }
 
         public Vector2(float x, float y)
         {
