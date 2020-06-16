@@ -21,7 +21,7 @@ namespace AutoConsole
         public static Vector2 operator *(Vector2 v, float f)
             => new Vector2(v.X * f, v.Y * f);
 
-        public static Vector2 Zero { get { return new Vector2(0.0f, 0.0f); } }
+        public static Vector2 Zero => new Vector2(0.0f, 0.0f);
     }
 
     class Utils
