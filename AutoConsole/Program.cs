@@ -25,7 +25,7 @@ namespace AutoConsole
             Console.SetCursorPosition(0, Console.WindowHeight - 1);
             Console.WriteLine($"Car is on? {car.IsEngineOn} || Velocity: {car.VelocityInKmh} || Rotation: {car.RotationDegrees}");
         }
-
+        
         static void Main(string[] args)
         {
             Car car = new Car();
