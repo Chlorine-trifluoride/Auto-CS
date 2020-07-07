@@ -46,7 +46,7 @@
   </ItemGroup>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Condition="$(os) == 'Windows_NT'" Command="xcopy /d /y $(ProjectDir)lib\SDL2.dll $(OutDir)&#xD;&#xA;xcopy /d /y $(ProjectDir)lib\image $(OutDir)&#xD;&#xA;xcopy /d /y $($(ProjectDir)lib\ttf $(OutDir)" />
+    <Exec Condition="$(os) == 'Windows_NT'" Command="xcopy /d /y $(ProjectDir)lib\SDL2.dll $(OutDir)&#xD;&#xA;xcopy /d /y $(ProjectDir)lib\image $(OutDir)&#xD;&#xA;xcopy /d /y $(ProjectDir)lib\ttf $(OutDir)" />
 
 	  <Exec Condition="$(os) == 'UNIX' and ! $([System.IO.File]::Exists('$(OutDir)libSDL2.so'))" Command="ln -s -v /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0 $(OutDir)libSDL2.so" />
 
