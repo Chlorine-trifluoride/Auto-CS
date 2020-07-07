@@ -42,11 +42,8 @@ namespace AutoSDL
                 return;
             }
 
-            //IntPtr iconImage = SDL_image.IMG_Load("media/car_img.png");
-            //IntPtr iconPtr = SDL.SDL_CreateRGBSurfaceFrom(iconImage, 16, 16, 16, 16 * 2, 0x0f00, 0x00f0, 0x000f, 0xf000);
-            //Console.WriteLine(SDL.SDL_GetError());
-            //SDL.SDL_SetWindowIcon(windowPtr, iconImage);
-            //Console.WriteLine(SDL.SDL_GetError());
+            IntPtr iconImage = SDL_image.IMG_Load("media/car_img.png");
+            SDL.SDL_SetWindowIcon(windowPtr, iconImage);
 
             // Init hardware accelerated graphics if possible, fall back on software
             rendererPtr = SDL.SDL_CreateRenderer(windowPtr, -1, SDL.SDL_RendererFlags.SDL_RENDERER_ACCELERATED | SDL.SDL_RendererFlags.SDL_RENDERER_PRESENTVSYNC);
