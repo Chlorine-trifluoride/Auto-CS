@@ -111,6 +111,16 @@ namespace AutoSDL
                         case SDL.SDL_EventType.SDL_KEYUP:
                             InputManager.SetKeyState(sdlEvent.key.keysym.sym, false);
                             break;
+
+
+                        case SDL.SDL_EventType.SDL_WINDOWEVENT:
+                            if (sdlEvent.window.windowEvent == SDL.SDL_WindowEventID.SDL_WINDOWEVENT_RESIZED ||
+                                sdlEvent.window.windowEvent == SDL.SDL_WindowEventID.SDL_WINDOWEVENT_SIZE_CHANGED)
+                            {
+                                WindowWidth = sdlEvent.window.data1;
+                                WindowHeight = sdlEvent.window.data2;
+                            }
+                            break;
                     }
                 }
             }
