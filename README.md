@@ -1,5 +1,5 @@
 <h1 align="center">
-	<img src="https://github.com/Chlorine-trifluoride/Auto-CS/raw/master/AutoSDL/media/car_img.png" width="256"/>
+	<img src="https://github.com/Chlorine-trifluoride/Auto-CS/raw/master/AutoSDL/media/car_img.png" width="128"/>
 	<br/>
 	Auto-CS
 </h1>
@@ -9,6 +9,7 @@
 
 Open AutoConsole.csproj in Visual Studio or from command line:
 ```bash
+cd AutoConsole
 dotnet run --configuration Release
 ```
 
@@ -20,6 +21,7 @@ dotnet run --configuration Release
 
 Open AutoSDL.csproj in Visual Studio or from command line:
 ```
+cd AutoSDL
 dotnet run --configuration Release
 ```
 
@@ -39,5 +41,6 @@ ln -s /path/to/lib /path/to/build/bin
 
 Build and run the program with the following command:
 ```bash
+cd AutoSDL
 dotnet run --configuration Release
 ```
