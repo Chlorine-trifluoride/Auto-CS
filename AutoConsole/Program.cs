@@ -11,16 +11,22 @@ namespace AutoConsole
             Console.Clear(); // TODO: fix blinking?
 
             Point p = new Point((int)car.Position.X, (int)car.Position.Y);
+            // Set origin to center
             p.X += Console.BufferWidth / 2;
             p.Y += Console.WindowHeight / 2;
 
-            // TODO: Wrap around
-            if (p.X >= 0 && p.X < Console.BufferWidth - 1
-                && p.Y >= 0 && p.Y < Console.WindowHeight - 2)
-            {
-                Console.SetCursorPosition(p.X, p.Y);
-                Console.Write('X');
-            }
+            // Edge wrap
+            p.X = p.X % Console.BufferWidth;
+            p.Y = p.Y % Console.WindowHeight;
+
+            if (p.X < 0)
+                p.X += Console.BufferWidth;
+
+            if (p.Y < 0)
+                p.Y += Console.WindowHeight;
+
+            Console.SetCursorPosition(p.X, p.Y);
+            Console.Write('X');
 
             Console.SetCursorPosition(0, Console.WindowHeight - 1);
             Console.WriteLine($"Car is on? {car.IsEngineOn} || Velocity: {car.VelocityInKmh} || Rotation: {car.RotationDegrees}");

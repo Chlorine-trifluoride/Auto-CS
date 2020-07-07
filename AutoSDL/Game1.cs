@@ -64,7 +64,7 @@ namespace AutoSDL
         {
             SDL.SDL_RenderClear(rendererPtr);
 
-            car.Renderer.Render(rendererPtr);
+            car.Renderer.Render(rendererPtr, this);
 
             SDL.SDL_RenderPresent(rendererPtr);
         }

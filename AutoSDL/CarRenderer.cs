@@ -40,10 +40,17 @@ namespace AutoSDL
             SDL.SDL_DestroyTexture(carTexture);
         }
 
-        public void Render(IntPtr rendererPtr)
+        public void Render(IntPtr rendererPtr, GameBase game)
         {
-            dstRect.x = (int)car.Position.X;
-            dstRect.y = (int)car.Position.Y;
+            // Edge wrap
+            dstRect.x = (int)car.Position.X % game.WindowWidth;
+            dstRect.y = (int)car.Position.Y % game.WindowHeight;
+
+            if (dstRect.x < 0)
+                dstRect.x += game.WindowWidth;
+
+            if (dstRect.y < 0)
+                dstRect.y += game.WindowHeight;
 
             SDL.SDL_RenderCopyEx(rendererPtr, carTexture, IntPtr.Zero, ref dstRect,
                 car.RotationDegrees + 90, ref center, SDL.SDL_RendererFlip.SDL_FLIP_NONE);
