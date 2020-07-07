@@ -34,12 +34,14 @@ namespace AutoConsole
         
         static void Main(string[] args)
         {
+            bool quit = false;
+
             Car car = new Car();
             Task.Run(async () =>
             {
                 try // Catch any issues
                 {
-                    for (; ; )
+                    while (!quit)
                     {
                         car.Update();
                         PrintOutput(car);
@@ -49,7 +51,7 @@ namespace AutoConsole
                 } catch (Exception e) { Console.WriteLine(e); }
             });
 
-            for(; ;) // TODO: exit
+            while(!quit)
             {
                 ConsoleKeyInfo keyInfo = Console.ReadKey(false);
                 ConsoleKey key = keyInfo.Key;
@@ -74,6 +76,10 @@ namespace AutoConsole
                         break;
                     case ConsoleKey.X:
                         car.TurnEngineOff();
+                        break;
+
+                    case ConsoleKey.Escape:
+                        quit = true;
                         break;
                 }
             }
