@@ -52,7 +52,7 @@
 
 	  <Exec Condition="$(os) == 'UNIX' and ! $([System.IO.File]::Exists('$(OutDir)libSDL2_image.so'))" Command="ln -s -v /usr/lib/x86_64-linux-gnu/libSDL2_image-2.0.so.0 $(OutDir)libSDL2_image.so" />
 
-	  <Exec Condition="$(os) == 'UNIX' and ! $([System.IO.File]::Exists('$(OutDir)libSDL2_ttf.so'))" Command="ln -s -v /usr/lib/x86_64-linux-gnu/libSDL2_ttf-2.0.so.0 $(OutDir)libSDL2_image.so" />
+	  <Exec Condition="$(os) == 'UNIX' and ! $([System.IO.File]::Exists('$(OutDir)libSDL2_ttf.so'))" Command="ln -s -v /usr/lib/x86_64-linux-gnu/libSDL2_ttf-2.0.so.0 $(OutDir)libSDL2_ttf.so" />
   </Target>
 
 </Project>
