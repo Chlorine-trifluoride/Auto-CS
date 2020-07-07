@@ -8,7 +8,6 @@ namespace AutoSDL
 {
     class Game1 : GameBase
     {
-        private bool[] keys;
         private Car car;
 
         public Game1(int windowWidth, int windowHeight) : base(windowWidth, windowHeight)

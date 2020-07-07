@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.Text;
 using SDL2;
@@ -44,7 +45,7 @@ namespace AutoSDL
             //IntPtr iconImage = SDL_image.IMG_Load("media/car_img.png");
             //IntPtr iconPtr = SDL.SDL_CreateRGBSurfaceFrom(iconImage, 16, 16, 16, 16 * 2, 0x0f00, 0x00f0, 0x000f, 0xf000);
             //Console.WriteLine(SDL.SDL_GetError());
-            //SDL.SDL_SetWindowIcon(windowPtr, iconPtr);
+            //SDL.SDL_SetWindowIcon(windowPtr, iconImage);
             //Console.WriteLine(SDL.SDL_GetError());
 
             // Init hardware accelerated graphics if possible, fall back on software
