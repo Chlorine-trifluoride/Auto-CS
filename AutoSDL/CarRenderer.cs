@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Net.NetworkInformation;
-using System.Text;
-using AutoConsole;
 using SDL2;
 
 namespace AutoSDL

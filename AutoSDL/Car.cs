@@ -1,9 +1,6 @@
-﻿using AutoSDL;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System;
 
-namespace AutoConsole
+namespace AutoSDL
 {
     class Car
     {

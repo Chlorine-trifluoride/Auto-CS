@@ -1,8 +1,5 @@
 ﻿using SDL2;
 using System;
-using System.Collections.Generic;
-using System.Text;
-using AutoConsole;
 
 namespace AutoSDL
 {

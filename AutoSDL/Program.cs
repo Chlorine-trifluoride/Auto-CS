@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Diagnostics;
-using System.Linq;
-using AutoConsole;
-using SDL2;
 
 namespace AutoSDL
 {
