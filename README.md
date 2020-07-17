@@ -1,5 +1,5 @@
 <h1 align="center">
-	<img src="https://github.com/Chlorine-trifluoride/Auto-CS/raw/master/AutoSDL/media/car_img.png" width="128"/>
+	<img src="https://github.com/Chlorine-trifluoride/Auto-CS/raw/master/AutoSDL/media/car_icon.png" width="128"/>
 	<br/>
 	Auto-CS
 </h1>
@@ -33,14 +33,15 @@ Install them using your package manager.
 ```bash
 apt install libsdl2-2.0-0 libsdl2-image-2.0-0 libsdl2-ttf-2.0-0
 ```
-The post build script tries to add symlink to the libs. If it fails do it manually.
-
-```bash
-ln -s /path/to/lib /path/to/build/bin
-```
 
 Build and run the program with the following command:
 ```bash
 cd AutoSDL
 dotnet run --configuration Release
+```
+
+The post build script tries to add symlink to the libs. If it fails do it manually.
+
+```bash
+ln -s /path/to/lib /path/to/build/bin/lib
 ```
