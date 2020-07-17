@@ -15,6 +15,7 @@ namespace AutoSDL
         private SDL.SDL_Point center;
 
         private const int scale = 3;
+        private int halfCarLen;
 
         public CarRenderer(Car car)
         {
@@ -33,6 +34,8 @@ namespace AutoSDL
 
             center.x = w / 2 * scale;
             center.y = h / 2 * scale;
+
+            halfCarLen = w / 2 * scale;
         }
 
         public void Cleanup()
@@ -46,11 +49,16 @@ namespace AutoSDL
             dstRect.x = (int)car.Position.X % game.WindowWidth;
             dstRect.y = (int)car.Position.Y % game.WindowHeight;
 
+            // fix negatives
             if (dstRect.x < 0)
                 dstRect.x += game.WindowWidth;
 
             if (dstRect.y < 0)
                 dstRect.y += game.WindowHeight;
+
+            // wrap when half off screen
+            dstRect.x -= halfCarLen;
+            dstRect.y -= halfCarLen;
 
             SDL.SDL_RenderCopyEx(rendererPtr, carTexture, IntPtr.Zero, ref dstRect,
                 car.RotationDegrees + 90, ref center, SDL.SDL_RendererFlip.SDL_FLIP_NONE);
