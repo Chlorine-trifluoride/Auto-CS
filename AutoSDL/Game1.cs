@@ -20,7 +20,7 @@ namespace AutoSDL
         {
             base.Init();
 
-            car = new Car();
+            car = new Car(new Vector2(48.0f, 48.0f), MathF.PI / 2);
             car.Renderer = new CarRenderer(car);
 
             ui = new UI(car);

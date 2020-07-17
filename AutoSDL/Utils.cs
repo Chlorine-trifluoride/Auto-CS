@@ -29,8 +29,8 @@ namespace AutoConsole
         public static Vector2 RadianToVector2(float rad)
         {
             return new Vector2(
-                MathF.Cos(rad), // x
-                MathF.Sin(rad)); // y
+                MathF.Sin(rad), // x
+                -MathF.Cos(rad)); // y
         }
 
         public static int RadianToDegrees(float rad)

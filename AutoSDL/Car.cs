@@ -18,9 +18,14 @@ namespace AutoConsole
 
         private float steerDirection = 0.0f;
 
-        public Car()
+        public Car(Vector2 position, float rotation)
         {
-            Position = Vector2.Zero;
+            this.Position = position;
+            this.Rotation = rotation;
+        }
+
+        public Car() : this(Vector2.Zero, 0.0f)
+        {
         }
 
         public bool TurnEngineOn()

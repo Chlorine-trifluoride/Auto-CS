@@ -61,7 +61,7 @@ namespace AutoSDL
             dstRect.y -= halfCarLen;
 
             SDL.SDL_RenderCopyEx(rendererPtr, carTexture, IntPtr.Zero, ref dstRect,
-                car.RotationDegrees + 90, ref center, SDL.SDL_RendererFlip.SDL_FLIP_NONE);
+                car.RotationDegrees, ref center, SDL.SDL_RendererFlip.SDL_FLIP_NONE);
         }
     }
 }
