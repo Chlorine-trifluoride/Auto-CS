@@ -9,6 +9,7 @@ namespace AutoSDL
     class Game1 : GameBase
     {
         private Car car;
+        private UI ui;
 
         public Game1(int windowWidth, int windowHeight) : base(windowWidth, windowHeight)
         {
@@ -21,11 +22,14 @@ namespace AutoSDL
 
             car = new Car();
             car.Renderer = new CarRenderer(car);
+
+            ui = new UI(car);
         }
 
         protected override void Cleanup()
         {
             car.Renderer.Cleanup();
+            ui.Cleanup();
 
             base.Cleanup();
         }
@@ -33,6 +37,7 @@ namespace AutoSDL
         protected override void Load(IntPtr rendererPtr)
         {
             car.Renderer.LoadInit(rendererPtr);
+            ui.LoadInit(rendererPtr);
         }
 
         protected override void UpdateLogic(float deltaTime)
@@ -58,6 +63,7 @@ namespace AutoSDL
                 car.TurnEngineOff();
 
             car.Update(deltaTime);
+            ui.Update();
         }
 
         protected override void RenderScene(IntPtr rendererPtr)
@@ -65,6 +71,7 @@ namespace AutoSDL
             SDL.SDL_RenderClear(rendererPtr);
 
             car.Renderer.Render(rendererPtr, this);
+            ui.Render(rendererPtr, this);
 
             SDL.SDL_RenderPresent(rendererPtr);
         }

@@ -133,10 +133,12 @@ namespace AutoSDL
         protected virtual void Init()
         {
             InputManager.Init();
+            SDL_ttf.TTF_Init();
         }
 
         protected virtual void Cleanup()
         {
+            SDL_ttf.TTF_Quit();
             SDL.SDL_DestroyRenderer(rendererPtr);
             SDL.SDL_DestroyWindow(windowPtr);
             SDL.SDL_Quit();

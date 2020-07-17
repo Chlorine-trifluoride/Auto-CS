@@ -14,7 +14,7 @@ namespace AutoConsole
         public float Velocity { get; private set; } = 0.0f;
         public Vector2 Position { get; private set; }
         public float RotationDegrees => Utils.RadianToDegrees(Rotation);
-        public int VelocityInKmh => (int)(Velocity * 15.0f);
+        public int VelocityInKmh => (int)(Velocity * 0.2f);
 
         private float steerDirection = 0.0f;
 
