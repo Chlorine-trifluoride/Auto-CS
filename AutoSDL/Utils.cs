@@ -4,7 +4,7 @@ using System.Text;
 
 namespace AutoConsole
 {
-    class Vector2
+    struct Vector2
     {
         public float X { get; private set; }
         public float Y { get; private set; }
